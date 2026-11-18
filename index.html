@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>beau</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: white;
+            color: black;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: black;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: black;
+        }
+
+        #noBtn {
+            position: relative;
+        }
+
+        .hidden-message {
+            display: none;
+            text-align: center;
+        }
+
+        .hidden-message img {
+            width: 300px;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+
+        .hidden-message h2 {
+            font-size: 2.5em;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CRUSH MO BA AKO?</h1>
+
+    <div class="question">
+       pumili mabuti: 
+    </div>
+
+    <div class="buttons">
+        <button onclick="revealSurprise()">YES</button>
+        <button id="noBtn" onclick="moveButton()">HELL NAH</button>
+    </div>
+
+    <div class="hidden-message" id="surpriseMessage">
+        <h2>yiee sabi ko na e, ako lang i2🥰😍😝😚😘🤩🤩🩵🩷💜🫶🏻🫶🏻</h2>
+        
+
+    </div>
+    
+    <script>
+        let noBtn = document.getElementById('noBtn');
+
+        function moveButton() {
+            let x = Math.floor(Math.random() * (window.innerWidth - 100));
+            let y = Math.floor(Math.random() * (window.innerHeight - 50));
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        function revealSurprise() {
+            document.getElementById('surpriseMessage').style.display = 'block';
+            document.querySelector('.buttons').style.display = 'none';
+            document.querySelector('.question').style.display = 'none'; 
+        }
+    </script>
+
+
+</body>
+</html>
